@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  liquibase:
+    enabled: true
+    drop-first: true
+    default-schema: public
+    change-log: classpath:db/changelog_init.xml
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres_exchange
+    username: postgres_exchange
+    password: postgres_exchange
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        show_sql: true
+        hbm2ddl:
+          auto: none
+
+  update:
+    timeUpdate: 3_600_000
+    urlUpdate: https://www.cbr.ru/scripts/XML_daily.asp
+

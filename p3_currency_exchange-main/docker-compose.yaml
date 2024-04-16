@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg_container_exchange
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres_exchange
+      POSTGRES_PASSWORD: postgres_exchange
+      POSTGRES_DB: postgres_exchange
+    ports:
+      - "5432:5432"
